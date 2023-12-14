@@ -11,6 +11,7 @@ public class StudentKioskSystem
      
     public static void main(String[] args) throws SQLException
     {
+         //Hello Kim
         Database db = new Database();
         db.connect("Database.db");
         
