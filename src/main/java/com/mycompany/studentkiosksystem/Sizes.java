@@ -235,7 +235,7 @@ public class Sizes
                 }
                 else
                 {
-                    cart.addProduct("Blouse w/ Skirt Set (XL)", 1, 1260);
+                    cart.addProduct("Blouse w/ Skirt Set (4XL)", 1, 1260);
                 }
                 return cart;                
             case 9:
@@ -723,8 +723,9 @@ public class Sizes
                  
         return cart;
     }
+      
 
-      public void sizepesnashs(){
+      public ShoppingList sizepescmcs(ShoppingList cart){
           //for snashs
           Scanner input = new Scanner(System.in);
           HigherEd hed = new HigherEd();
@@ -742,220 +743,99 @@ public class Sizes
           
           System.out.println("\n\nEnter here");
           item = input.nextInt();
-          switch(item){
-              case 1:
-                  System.out.println("Item                   Extra Small PE Uniform");
-                  price = 1105;
-                call = 1;
-                  break;
-              case 2: 
-                  System.out.println("Item                   Small PE Uniform");
-                call = 1;
-                  price = 1105;
-                  break;
-              case 3: 
-                  System.out.println("Item                   Medium PE Uniform");
-                call = 1;
-                  price = 1105;
-                  break;
-              case 4: 
-                  System.out.println("Item                   Large PE Uniform");
-                call = 1;
-                  price = 1130;
-                  break;
-              case 5:
-                  System.out.println("Item                   Extra Large PE Uniform");
-                  price = 1150;
-                call = 1;
-                  break;
-              case 6: 
-                  System.out.println("Item                   2XL PE Uniform");
-                  price = 1250;
-                call = 1;
-                  break;
-              case 7: 
-                    st.select();
-                  break;
-              default:
-                  sizepe(cart);
-                  break;
-          }          
-        System.out.println("Price                  "+price);
-        System.out.println("--------------------------------");
-        total = total + price;
-        quantity = quantity + call;
-        System.out.println("Total amount: "+total);
-        Scanner sc = new Scanner(System.in);
-        
-        System.out.print("Add another? (y/n) : ");
-        String gsige = sc.nextLine();
-        if(gsige.equals("y")||gsige.equals("Y")){
-            hed.total3 = total;
-            hed.quantity3 = quantity;
-            hed.snashs();
+          switch (item) {
+    case 1:
+        if (cart.isExisting("SDCA Official Red Shirt (X-SMALL)")) {
+            cart.updateQuantity("SDCA Official Red Shirt (X-SMALL)", 1);
+        } else {
+            cart.addProduct("SDCA Official Red Shirt (X-SMALL)", 1, 500);
         }
-        else{
-            hed.snashpay();
-          
-        }
-          }
-      public void sizepescmcs(){
-          //for snashs
-          Scanner input = new Scanner(System.in);
-          HigherEd hed = new HigherEd();
-          Select st = new Select();
-          
-          System.out.print("\n[1]Extra Small");
-          System.out.print("\t\t[4]Large");
+        return cart;
 
-          System.out.print("\n[2]Small");
-          System.out.print("\t\t[5]Extra Large");
+    case 2:
+        if (cart.isExisting("SDCA Official Red Shirt (SMALL)")) {
+            cart.updateQuantity("SDCA Official Red Shirt (SMALL)", 1);
+        } else {
+            cart.addProduct("SDCA Official Red Shirt (SMALL)", 1, 500);
+        }
+        return cart;
 
-          System.out.print("\n[3]Medium");
-          System.out.print("\t\t[6]2XL");
-          System.out.print("\n[7]Back/Return");
-          
-          System.out.println("\n\nEnter here");
-          item = input.nextInt();
-          switch(item){
-              case 1:
-                  System.out.println("Item                   Extra Small PE Uniform");
-                  price = 1105;
-                call = 1;
-                  break;
-              case 2: 
-                  System.out.println("Item                   Small PE Uniform");
-                call = 1;
-                  price = 1105;
-                  break;
-              case 3: 
-                  System.out.println("Item                   Medium PE Uniform");
-                call = 1;
-                  price = 1105;
-                  break;
-              case 4: 
-                  System.out.println("Item                   Large PE Uniform");
-                call = 1;
-                  price = 1130;
-                  break;
-              case 5:
-                  System.out.println("Item                   Extra Large PE Uniform");
-                  price = 1150;
-                call = 1;
-                  break;
-              case 6: 
-                  System.out.println("Item                   2XL PE Uniform");
-                  price = 1250;
-                call = 1;
-                  break;
-              case 7: 
-                    st.select();
-                  break;
-              default:
-                  sizepe(cart);
-                  break;
-          }          
-        System.out.println("Price                  "+price);
-        System.out.println("--------------------------------");
-        total = total + price;
-        quantity = quantity + call;
-        System.out.println("Total amount: "+total);
-        Scanner sc = new Scanner(System.in);
-        
-        System.out.print("Add another? (y/n) : ");
-        String gsige = sc.nextLine();
-        if(gsige.equals("y")||gsige.equals("Y")){
-            hed.total4 = total;
-            hed.quantity4 = quantity;
-            hed.scmcs();
+    case 3:
+        if (cart.isExisting("SDCA Official Red Shirt (MEDIUM)")) {
+            cart.updateQuantity("SDCA Official Red Shirt (MEDIUM)", 1);
+        } else {
+            cart.addProduct("SDCA Official Red Shirt (MEDIUM)", 1, 500);
         }
-        else{
-            hed.snashpay();
-          
-        }
-          }
-      public void sizepesihtm(){
-          //for sihtm
-          Scanner input = new Scanner(System.in);
-          HigherEd hed = new HigherEd();
-          Select st = new Select();
-          
-          System.out.print("\n[1]Extra Small");
-          System.out.print("\t\t[4]Large");
+        return cart;
 
-          System.out.print("\n[2]Small");
-          System.out.print("\t\t[5]Extra Large");
+    case 4:
+        if (cart.isExisting("SDCA Official Red Shirt (LARGE)")) {
+            cart.updateQuantity("SDCA Official Red Shirt (LARGE)", 1);
+        } else {
+            cart.addProduct("SDCA Official Red Shirt (LARGE)", 1, 550);
+        }
+        return cart;
 
-          System.out.print("\n[3]Medium");
-          System.out.print("\t\t[6]2XL");
-          System.out.print("\n[7]Back/Return");
-          
-          System.out.println("\n\nEnter here");
-          item = input.nextInt();
-          switch(item){
-              case 1:
-                  System.out.println("Item                   Extra Small PE Uniform");
-                  price = 1105;
-                call = 1;
-                  break;
-              case 2: 
-                  System.out.println("Item                   Small PE Uniform");
-                call = 1;
-                  price = 1105;
-                  break;
-              case 3: 
-                  System.out.println("Item                   Medium PE Uniform");
-                call = 1;
-                  price = 1105;
-                  break;
-              case 4: 
-                  System.out.println("Item                   Large PE Uniform");
-                call = 1;
-                  price = 1130;
-                  break;
-              case 5:
-                  System.out.println("Item                   Extra Large PE Uniform");
-                  price = 1150;
-                call = 1;
-                  break;
-              case 6: 
-                  System.out.println("Item                   2XL PE Uniform");
-                  price = 1250;
-                call = 1;
-                  break;
-              case 7: 
-                   hed.sihtm();
-                  break;
-              default:
-                  sizepesihtm();
-                  break;
-          }          
-        System.out.println("Price                  "+price);
-        System.out.println("--------------------------------");
-        total = total + price;
-        quantity = quantity + call;
-        System.out.println("Total amount: "+total);
-        Scanner sc = new Scanner(System.in);
-        
-        System.out.print("Add another? (y/n) : ");
-        String gsige = sc.nextLine();
-        if(gsige.equals("y")||gsige.equals("Y")){
-            hed.total5 = total;
-            hed.quantity5 = quantity;
-            hed.sihtm();
+    case 5:
+        if (cart.isExisting("SDCA Official Red Shirt (XL)")) {
+            cart.updateQuantity("SDCA Official Red Shirt (XL)", 1);
+        } else {
+            cart.addProduct("SDCA Official Red Shirt (XL)", 1, 550);
         }
-        else{
-            hed.sihtmpay();
-          
+        return cart;
+
+    case 6:
+        if (cart.isExisting("SDCA Official Red Shirt (2XL)")) {
+            cart.updateQuantity("SDCA Official Red Shirt (2XL)", 1);
+        } else {
+            cart.addProduct("SDCA Official Red Shirt (2XL)", 1, 600);
         }
-          }
-      public void sizesnashsscrub(){
+        return cart;
+
+    case 7:
+        if (cart.isExisting("SDCA Official Red Shirt (3XL)")) {
+            cart.updateQuantity("SDCA Official Red Shirt (3XL)", 1);
+        } else {
+            cart.addProduct("SDCA Official Red Shirt (3XL)", 1, 600);
+        }
+        return cart;
+
+    case 8:
+        if (cart.isExisting("SDCA Official Red Shirt (4XL)")) {
+            cart.updateQuantity("SDCA Official Red Shirt (4XL)", 1);
+        } else {
+            cart.addProduct("SDCA Official Red Shirt (4XL)", 1, 700);
+        }
+        return cart;
+
+    case 9:
+        if (cart.isExisting("SDCA Official Red Shirt (5XL)")) {
+            cart.updateQuantity("SDCA Official Red Shirt (5XL)", 1);
+        } else {
+            cart.addProduct("SDCA Official Red Shirt (5XL)", 1, 750);
+        }
+        return cart;
+
+    case 10:
+        hed.higher(cart);
+        break;
+
+    default:
+        sizepescmcs(cart);
+        break;
+}
+
+            
+        return cart;
+     }
+      
+      public ShoppingList sizesnashsscrub(ShoppingList cart){
         Scanner input = new Scanner(System.in);
         HigherEd hed = new HigherEd();
         
-        System.out.print("\n[1]Small");
+        System.out.print("\n[1]Extra Small");
         System.out.print("\t\t[6]2XL");
-        System.out.print("\n[2]Extra Small");
+        System.out.print("\n[2]Small");
         System.out.print("\t\t[7]3XL");
         System.out.print("\n[3]Medium");
         System.out.print("\t\t[8]4XL");
@@ -967,82 +847,90 @@ public class Sizes
         System.out.print("\nEnter Size: ");
         item = input.nextInt();
         
-        switch(item){
-        
+        switch(item)
+        {        
             case 1: 
-                System.out.println("Item                         Small Scrub Top w Pants");
-                call = 1;
-                price = 1370;
-                break;
+                if (cart.isExisting("Scrub Top w Pants (X-SMALL)")) {
+            cart.updateQuantity("Scrub Top w Pants (X-SMALL)", 1);
+        } else {
+            cart.addProduct("Scrub Top w Pants (X-SMALL)", 1, 1370);
+        }
+        return cart;
+                
               
             case 2:
-                System.out.println("Item                         Extra Small Scrub Top w Pants");
-                call = 1;
-                price = 1370;
-                break;
+                if (cart.isExisting("Scrub Top w Pants (SMALL)")) {
+            cart.updateQuantity("Scrub Top w Pants (SMALL)", 1);
+        } else {
+            cart.addProduct("Scrub Top w Pants (SMALL)", 1, 1370);
+        }
+        return cart;
+                
             case 3: 
-                System.out.println("Item                         Medium Scrub Top w Pants ");
-                call = 1;
-                price = 1370;
-                break;
+                if (cart.isExisting("Scrub Top w Pants (MEDIUM)")) {
+            cart.updateQuantity("Scrub Top w Pants (MEDIUM)", 1);
+        } else {
+            cart.addProduct("Scrub Top w Pants (MEDIUM)", 1, 1370);
+        }
+        return cart;
+                
             case 4:
-                System.out.println("Item                         Large Scrub Top w Pants");
-                call = 1;
-                price = 1370;
-                break;
+                if (cart.isExisting("Scrub Top w Pants (LARGE)")) {
+            cart.updateQuantity("Scrub Top w Pants (LARGE)", 1);
+        } else {
+            cart.addProduct("Scrub Top w Pants (LARGE)", 1, 1370);
+        }
+        return cart;
+                
             case 5:
-                System.out.println("Item                         Extra Large Scrub Top w Pants");
-                call = 1;
-                price = 1370;
-                break;
+                if (cart.isExisting("Scrub Top w Pants (XL)")) {
+            cart.updateQuantity("Scrub Top w Pants (XL)", 1);
+        } else {
+            cart.addProduct("Scrub Top w Pants (XL)", 1, 1370);
+        }
+        return cart;
+                
             case 6: 
-                System.out.println("Item                         2XL Scrub Top w Pants ");
-                call = 1;
-                price = 1560;
+                if (cart.isExisting("Scrub Top w Pants (2XL)")) {
+            cart.updateQuantity("Scrub Top w Pants (2XL)", 1);
+        } else {
+            cart.addProduct("Scrub Top w Pants (2XL)", 1, 1560);
+        }
+        return cart;
                 
-               break;
             case 7:
-                System.out.println("Item                         3XL Scrub Top w Pants");
-                call = 1;
-                price = 1560;
-                break;
+                if (cart.isExisting("Scrub Top w Pants (3XL)")) {
+            cart.updateQuantity("Scrub Top w Pants (3XL)", 1);
+        } else {
+            cart.addProduct("Scrub Top w Pants (3XL)", 1, 1560);
+        }
+        return cart;                
             case 8:
-                System.out.println("Item                         4XL Scrub Top w Pants");
-                call = 1;
-                price = 1560;
-                break;
+                if (cart.isExisting("Scrub Top w Pants (4XL)")) {
+            cart.updateQuantity("Scrub Top w Pants (4XL)", 1);
+        } else {
+            cart.addProduct("Scrub Top w Pants (4XL)", 1, 1560);
+        }
+        return cart;                
             case 9:
-                System.out.println("Item                         5XL Scrub Top w Pants");
-                call = 1;
-                price = 1560;
+                if (cart.isExisting("Scrub Top w Pants (5XL)")) {
+            cart.updateQuantity("Scrub Top w Pants (5XL)", 1);
+        } else {
+            cart.addProduct("Scrub Top w Pants (5XL)", 1, 1560);
+        }
+        return cart;                
+            case 10:                
+                hed.snashs(cart);
                 break;
-            case 10:
-                
-                hed.snashs();
-                break;
-            default:
-                sizesnashsscrub();
+            default:                
+                sizesnashsscrub(cart);
                 break;
         }
-                
-        System.out.println("Price                 "+price);
-        System.out.println("--------------------------------");
-        total = total + price;
-        quantity = quantity + call;
-        System.out.println("Total amount: "+total);
-        Scanner sc = new Scanner(System.in);
-        System.out.println("Add another? (y/n) : ");
-        String gesig = sc.nextLine();
-        if(gesig.equals("y")||gesig.equals("Y")){
-            hed.total3 = total;
-            hed.quantity3 = quantity;
-            hed.snashs();
-        }
-        else{
-            hed.snashpay();
-        }
-      }
-      public void sizesnashsgreen(){
+        
+        return cart;
+      } 
+      public ShoppingList sizesnashsgreen(ShoppingList cart)
+      {
         Scanner input = new Scanner(System.in);
         HigherEd hed = new HigherEd();
         
@@ -1058,56 +946,46 @@ public class Sizes
         switch(item){
         
             case 1: 
-                System.out.println("Item                  Small Green Nursing Uniform Coat");
-                call = 1;
-                price = 1500;
-                
-                break;
+                if (cart.isExisting("Green Nursing Uniform Coat (SMALL)")) {
+            cart.updateQuantity("Green Nursing Uniform Coat (SMALL)", 1);
+        } else {
+            cart.addProduct("Green Nursing Uniform Coat (SMALL)", 1, 1500);
+        }
+        return cart;                
               
             case 2:
-                System.out.println("Item                  Medium Green Nursing Uniform Coat");
-                call = 1;
-                price = 1500;
-                
-                break;
-            case 3: 
-                System.out.println("Item                  Large Green Nursing Uniform Coat");
-                call = 1;
-                price = 1560;
-                break;
+                if (cart.isExisting("Green Nursing Uniform Coat (MEDIUM)")) {
+            cart.updateQuantity("Green Nursing Uniform Coat (MEDIUM)", 1);
+        } else {
+            cart.addProduct("Green Nursing Uniform Coat (MEDIUM)", 1, 1500);
+        }
+        return cart;                 
+            case 3:
+                if (cart.isExisting("Green Nursing Uniform Coat (LARGE)")) {
+            cart.updateQuantity("Green Nursing Uniform Coat (LARGE)", 1);
+        } else {
+            cart.addProduct("Green Nursing Uniform Coat (LARGE)", 1, 1560);
+        }
+        return cart;                
             case 4:
-                System.out.println("Item                  Extra Large Green Nursing Uniform Coat");
-                call = 1;
-                price = 1600;
-                break;
-           
+                if (cart.isExisting("Green Nursing Uniform Coat (XL)")) {
+            cart.updateQuantity("Green Nursing Uniform Coat (XL)", 1);
+        } else {
+            cart.addProduct("Green Nursing Uniform Coat (XL)", 1, 1600);
+        }
+        return cart;                            
             case 5:
-                hed.snashs();
+                hed.snashs(cart);
                 break;
                 
             default:
-                sizesnashsgreen();
+                sizesnashsgreen(cart);
                 break;
         }
-        System.out.println("Price                 "+price);
-        System.out.println("--------------------------------");
-        total = total + price;
-        quantity = quantity + call;
-        System.out.println("Total amount: "+total);
-        
-        Scanner sc = new Scanner(System.in);
-        System.out.println("Add another? (y/n) : ");
-        String letgo = sc.nextLine();
-        if(letgo.equals("y")||letgo.equals("Y")){
-            hed.total3 = total;
-            hed.quantity3 = quantity;
-            hed.snashs();
-        }
-        else{
-            hed.snashpay();
-        }
-}
-      public void sizesnashslab(){
+       
+        return cart;
+} 
+      public ShoppingList sizesnashslab(ShoppingList cart){
         Scanner input = new Scanner(System.in);
         HigherEd hed = new HigherEd();
         
@@ -1123,411 +1001,287 @@ public class Sizes
         switch(item){
         
             case 1: 
-                System.out.println("Item                  Small Laboratory White Coat");
-                call = 1;
-                price = 1500;
-                
-                break;
-              
+                if (cart.isExisting("Laboratory White Coat (SMALL)")) 
+                {
+                    cart.updateQuantity("Laboratory White Coat (SMALL)", 1);
+                } 
+                else 
+                {
+                    cart.addProduct("Laboratory White Coat (Small)", 1, 1500);
+                }
+                return cart;                              
             case 2:
-                System.out.println("Item                  Medium Laboratory White Coat");
-                call = 1;
-                price = 1500;
-                
-                break;
+                if (cart.isExisting("Laboratory White Coat (MEDIUM)")) 
+                {
+                    cart.updateQuantity("Laboratory White Coat (MEDIUM)", 1);
+                } 
+                else 
+                {
+                    cart.addProduct("Laboratory White Coat (MEDIUM)", 1, 1500);
+                }
+                return cart;                
             case 3: 
-                System.out.println("Item                  Large Laboratory White Coat");
-                call = 1;
-                price = 1560;
-                
-                break;
+                if (cart.isExisting("Laboratory White Coat (LARGE)")) 
+                {
+                    cart.updateQuantity("Laboratory White Coat (LARGE)", 1);
+                } 
+                else 
+                {
+                    cart.addProduct("Laboratory White Coat (LARGE)", 1, 1560);
+                }
+                return cart;                
             case 4:
-                System.out.println("Item                  Extra Large Laboratory White Coat");
-                call = 1;
-                price = 1600;
-                break;
-           
+                if (cart.isExisting("Laboratory White Coat (XL)")) 
+                {
+                    cart.updateQuantity("Laboratory White Coat (XL)", 1);
+                } 
+                else 
+                {
+                    cart.addProduct("Laboratory White Coat (XL)", 1, 1600);
+                }
+                return cart;                
             case 5:
-                hed.snashs();
+                hed.snashs(cart);
                 break;
                 
             default:
-                sizesnashslab();
+                sizesnashslab(cart);
+                break;
+        }        
+    return cart;    
+} 
+
+      public ShoppingList sizescmcssdcared(ShoppingList cart){
+        Scanner input = new Scanner(System.in);
+        HigherEd hed = new HigherEd();
+        Select st = new Select();
+        
+        System.out.print("\n[1]Small");
+        System.out.print("\t\t[6]2XL");
+        System.out.print("\n[2]Extra Small");
+        System.out.print("\t\t[7]3XL");
+        System.out.print("\n[3]Medium");
+        System.out.print("\t\t[8]4XL");
+        System.out.print("\n[4]Large");
+        System.out.print("\t\t[9]5XL");
+        System.out.print("\n[5]Extra Large");
+        System.out.print("\t\t[10]Back/Return");
+        
+        System.out.print("\nEnter Size: ");
+        item = input.nextInt();
+        
+        switch(item){
+        
+            case 1:
+        if (cart.isExisting("Small SDCA Official Red Shirt w Slacks")) {
+            cart.updateQuantity("Small SDCA Official Red Shirt w Slacks", 1);
+        } else {
+            cart.addProduct("Small SDCA Official Red Shirt w Slacks", 1, 500);
+        }
+        return cart;
+
+    case 2:
+        if (cart.isExisting("Extra Small SDCA Official Red Shirt w Slacks")) {
+            cart.updateQuantity("Extra Small SDCA Official Red Shirt w Slacks", 1);
+        } else {
+            cart.addProduct("Extra Small SDCA Official Red Shirt w Slacks", 1, 500);
+        }
+        return cart;
+
+    case 3:
+        if (cart.isExisting("Medium SDCA Official Red Shirt w Slacks")) {
+            cart.updateQuantity("Medium SDCA Official Red Shirt w Slacks", 1);
+        } else {
+            cart.addProduct("Medium SDCA Official Red Shirt w Slacks", 1, 500);
+        }
+        return cart;
+
+    case 4:
+        if (cart.isExisting("Large SDCA Official Red Shirt w Slacks")) {
+            cart.updateQuantity("Large SDCA Official Red Shirt w Slacks", 1);
+        } else {
+            cart.addProduct("Large SDCA Official Red Shirt w Slacks", 1, 550);
+        }
+        return cart;
+
+    case 5:
+        if (cart.isExisting("Extra Large SDCA Official Red Shirt w Slacks")) {
+            cart.updateQuantity("Extra Large SDCA Official Red Shirt w Slacks", 1);
+        } else {
+            cart.addProduct("Extra Large SDCA Official Red Shirt w Slacks", 1, 550);
+        }
+        return cart;
+
+    case 6:
+        if (cart.isExisting("2XL SDCA Official Red Shirt w Slacks")) {
+            cart.updateQuantity("2XL SDCA Official Red Shirt w Slacks", 1);
+        } else {
+            cart.addProduct("2XL SDCA Official Red Shirt w Slacks", 1, 600);
+        }
+        return cart;
+
+    case 7:
+        if (cart.isExisting("3XL SDCA Official Red Shirt w Slacks")) {
+            cart.updateQuantity("3XL SDCA Official Red Shirt w Slacks", 1);
+        } else {
+            cart.addProduct("3XL SDCA Official Red Shirt w Slacks", 1, 600);
+        }
+        return cart;
+
+    case 8:
+        if (cart.isExisting("4XL SDCA Official Red Shirt w Slacks")) {
+            cart.updateQuantity("4XL SDCA Official Red Shirt w Slacks", 1);
+        } else {
+            cart.addProduct("4XL SDCA Official Red Shirt w Slacks", 1, 700);
+        }
+        return cart;
+
+    case 9:
+        if (cart.isExisting("5XL SDCA Official Red Shirt w Slacks")) {
+            cart.updateQuantity("5XL SDCA Official Red Shirt w Slacks", 1);
+        } else {
+            cart.addProduct("5XL SDCA Official Red Shirt w Slacks", 1, 750);
+        }
+        return cart;
+
+    case 10:
+        hed.higher(cart);
+        break;
+            default:
+                sizescmcssdcared(cart);
                 break;
         }
-        System.out.println("Price                 "+price);
-        System.out.println("--------------------------------");
-        total = total + price;
-        quantity = quantity + call;
-        System.out.println("Total amount: "+total);
-        
-        Scanner sc = new Scanner(System.in);
-        System.out.println("Add another? (y/n) : ");
-        String letsgo = sc.nextLine();
-        if(letsgo.equals("y")||letsgo.equals("Y")){
-            hed.total3 = total;
-            hed.quantity3 = quantity;
-            hed.snashs();
-        }
-        else{
-           hed.snashpay();
-        }
-        
+                
+        return cart;
+      }
+                 
+      public ShoppingList sizescmcsblouse(ShoppingList cart) {
+    // For Women's Blouse w Slacks
+    Scanner input = new Scanner(System.in);
+    HigherEd hed = new HigherEd();
+    Select st = new Select();
+
+    // Display menu options
+    System.out.println("\n[1] Small");
+    System.out.println("[2] Medium");
+    System.out.println("[3] Large");
+    System.out.println("[4] Extra Large");
+    System.out.println("[5] Back/Return");
+
+    // Get user input for size
+    System.out.print("\n\nEnter Size: ");
+    int item = input.nextInt();
+
+    switch (item) {
+        case 1:
+            // Check if item exists and add or update quantity
+            if (cart.isExisting("Small Women's Blouse w Slacks")) {
+                cart.updateQuantity("Small Women's Blouse w Slacks", 1);
+            } else {
+                cart.addProduct("Small Women's Blouse w Slacks", 1, 1600);
+            }
+            return cart;
+
+        case 2:
+            if (cart.isExisting("Medium Women's Blouse w Slacks")) {
+                cart.updateQuantity("Medium Women's Blouse w Slacks", 1);
+            } else {
+                cart.addProduct("Medium Women's Blouse w Slacks", 1, 1630);
+            }
+            return cart;
+
+        case 3:
+            if (cart.isExisting("Large Women's Blouse w Slacks")) {
+                cart.updateQuantity("Large Women's Blouse w Slacks", 1);
+            } else {
+                cart.addProduct("Large Women's Blouse w Slacks", 1, 1670);
+            }
+            return cart;
+
+        case 4:
+            if (cart.isExisting("Extra Large Women's Blouse w Slacks")) {
+                cart.updateQuantity("Extra Large Women's Blouse w Slacks", 1);
+            } else {
+                cart.addProduct("Extra Large Women's Blouse w Slacks", 1, 1690);
+            }
+            return cart;
+
+        case 5:
+            hed.scmcs(cart); // Handle back/return case
+            break;
+
+        default:
+            sizescmcsblouse(cart); // Handle invalid input
+            break;
+    }
+
+    return cart; // Return the updated cart
 }
-      public void sizesnashsdcared(){
-        Scanner input = new Scanner(System.in);
-        HigherEd hed = new HigherEd();
-        Select st = new Select();
-        
-        System.out.print("\n[1]Small");
-        System.out.print("\t\t[6]2XL");
-        System.out.print("\n[2]Extra Small");
-        System.out.print("\t\t[7]3XL");
-        System.out.print("\n[3]Medium");
-        System.out.print("\t\t[8]4XL");
-        System.out.print("\n[4]Large");
-        System.out.print("\t\t[9]5XL");
-        System.out.print("\n[5]Extra Large");
-        System.out.print("\t\t[10]Back/Return");
-        
-        System.out.print("\nEnter Size: ");
-        item = input.nextInt();
-        
-        switch(item){
-        
-            case 1: 
-                System.out.println("Item                         Small SDCA Official Red Shirt");
-                call = 1;
-                price = 500;
-                break;
-              
-            case 2:
-                System.out.println("Item                         Extra Small SDCA Official Red Shirt");
-                call = 1;
-                price = 500;
-                break;
-            case 3: 
-                System.out.println("Item                         Medium SDCA Official Red Shirt");
-                call = 1;
-                price = 500;
-                break;
-            case 4:
-                System.out.println("Item                         Large SDCA Official Red Shirt");
-                call = 1;
-                price = 550;
-                
-                break;
-            case 5:
-                System.out.println("Item                         Extra Large SDCA Official Red Shirt");
-                call = 1;
-                price = 550;
-                
-                break;
-            case 6: 
-                System.out.println("Item                         2XL SDCA Official Red Shirt ");
-                call = 1;
-                price = 600;
-                
-               break;
-            case 7:
-                System.out.println("Item                         3XL SDCA Official Red Shirt");
-                call = 1;
-                price = 600;
-                break;
-            case 8:
-                System.out.println("Item                         4XL SDCA Official Red Shirt");
-                call = 1;
-                price = 700;
-                break;
-            case 9:
-                System.out.println("Item                         5XL SDCA Official Red Shirt");
-                call = 1;
-                price = 750;
-                break;
-            case 10:
-                hed.higher();
-                break;
-            default:
-                sizesnashsdcared();
-                break;
-        }
-                
-        System.out.println("Price                 "+price);
-        System.out.println("--------------------------------");
-        total = total + price;
-        quantity = quantity + call;
-        System.out.println("Total amount: "+total);
-        Scanner sc = new Scanner(System.in);
-        System.out.println("Add another? (y/n) : ");
-        String redsige = sc.nextLine();
-        if(redsige.equals("y")||redsige.equals("Y")){
-            hed.quantity3 = quantity;
-            hed.total3 = total;
-            hed.snashs();
-        }
-        else{
-            hed.snashpay();
-      }
-         
-     }
-      public void sizescmcssdcared(){
-        Scanner input = new Scanner(System.in);
-        HigherEd hed = new HigherEd();
-        Select st = new Select();
-        
-        System.out.print("\n[1]Small");
-        System.out.print("\t\t[6]2XL");
-        System.out.print("\n[2]Extra Small");
-        System.out.print("\t\t[7]3XL");
-        System.out.print("\n[3]Medium");
-        System.out.print("\t\t[8]4XL");
-        System.out.print("\n[4]Large");
-        System.out.print("\t\t[9]5XL");
-        System.out.print("\n[5]Extra Large");
-        System.out.print("\t\t[10]Back/Return");
-        
-        System.out.print("\nEnter Size: ");
-        item = input.nextInt();
-        
-        switch(item){
-        
-            case 1: 
-                System.out.println("Item                         Small SDCA Official Red Shirt");
-                call = 1;
-                price = 500;
-                break;
-              
-            case 2:
-                System.out.println("Item                         Extra Small SDCA Official Red Shirt");
-                call = 1;
-                price = 500;
-                break;
-            case 3: 
-                System.out.println("Item                         Medium SDCA Official Red Shirt");
-                call = 1;
-                price = 500;
-                break;
-            case 4:
-                System.out.println("Item                         Large SDCA Official Red Shirt");
-                call = 1;
-                price = 550;
-                
-                break;
-            case 5:
-                System.out.println("Item                         Extra Large SDCA Official Red Shirt");
-                call = 1;
-                price = 550;
-                
-                break;
-            case 6: 
-                System.out.println("Item                         2XL SDCA Official Red Shirt ");
-                call = 1;
-                price = 600;
-                
-               break;
-            case 7:
-                System.out.println("Item                         3XL SDCA Official Red Shirt");
-                call = 1;
-                price = 600;
-                break;
-            case 8:
-                System.out.println("Item                         4XL SDCA Official Red Shirt");
-                call = 1;
-                price = 700;
-                break;
-            case 9:
-                System.out.println("Item                         5XL SDCA Official Red Shirt");
-                call = 1;
-                price = 750;
-                break;
-            case 10:
-                hed.higher();
-                break;
-            default:
-                sizesnashsdcared();
-                break;
-        }
-                
-        System.out.println("Price                 "+price);
-        System.out.println("--------------------------------");
-        total = total + price;
-        quantity = quantity + call;
-        System.out.println("Total amount: "+total);
-        Scanner sc = new Scanner(System.in);
-        System.out.println("Add another? (y/n) : ");
-        String redsige = sc.nextLine();
-        if(redsige.equals("y")||redsige.equals("Y")){
-            hed.quantity4 = quantity;
-            hed.total4 = total;
-            hed.scmcs();
-        }
-        else{
-            hed.scmcspay();
-      }
-         
-     }
-      public void sizesihtmsdcared(){
-        Scanner input = new Scanner(System.in);
-        HigherEd hed = new HigherEd();
-        Select st = new Select();
-        
-        System.out.print("\n[1]Small");
-        System.out.print("\t\t[6]2XL");
-        System.out.print("\n[2]Extra Small");
-        System.out.print("\t\t[7]3XL");
-        System.out.print("\n[3]Medium");
-        System.out.print("\t\t[8]4XL");
-        System.out.print("\n[4]Large");
-        System.out.print("\t\t[9]5XL");
-        System.out.print("\n[5]Extra Large");
-        System.out.print("\t\t[10]Back/Return");
-        
-        System.out.print("\nEnter Size: ");
-        item = input.nextInt();
-        
-        switch(item){
-        
-            case 1: 
-                System.out.println("Item                         Small SDCA Official Red Shirt");
-                call = 1;
-                price = 500;
-                break;
-              
-            case 2:
-                System.out.println("Item                         Extra Small SDCA Official Red Shirt");
-                call = 1;
-                price = 500;
-                break;
-            case 3: 
-                System.out.println("Item                         Medium SDCA Official Red Shirt");
-                call = 1;
-                price = 500;
-                break;
-            case 4:
-                System.out.println("Item                         Large SDCA Official Red Shirt");
-                call = 1;
-                price = 550;
-                
-                break;
-            case 5:
-                System.out.println("Item                         Extra Large SDCA Official Red Shirt");
-                call = 1;
-                price = 550;
-                
-                break;
-            case 6: 
-                System.out.println("Item                         2XL SDCA Official Red Shirt ");
-                call = 1;
-                price = 600;
-                
-               break;
-            case 7:
-                System.out.println("Item                         3XL SDCA Official Red Shirt");
-                call = 1;
-                price = 600;
-                break;
-            case 8:
-                System.out.println("Item                         4XL SDCA Official Red Shirt");
-                call = 1;
-                price = 700;
-                break;
-            case 9:
-                System.out.println("Item                         5XL SDCA Official Red Shirt");
-                call = 1;
-                price = 750;
-                break;
-            case 10:
-                hed.higher();
-                break;
-            default:
-                sizesnashsdcared();
-                break;
-        }
-                
-        System.out.println("Price                 "+price);
-        System.out.println("--------------------------------");
-        total = total + price;
-        quantity = quantity + call;
-        System.out.println("Total amount: "+total);
-        Scanner sc = new Scanner(System.in);
-        System.out.println("Add another? (y/n) : ");
-        String redsige = sc.nextLine();
-        if(redsige.equals("y")||redsige.equals("Y")){
-            hed.quantity5 = quantity;
-            hed.total5 = total;
-            hed.sihtm();
-        }
-        else{
-            hed.sihtmpay();
-      }
-         
-     }
-      public void sizescmcsblouse(){
-        //women's blouse w slacks
-        Scanner input = new Scanner(System.in);
-        HigherEd hed = new HigherEd();
-        Select st = new Select();
-        
-        System.out.print("\n[1]Small");
-        System.out.print("\t\t[3]Large");
-        System.out.print("\n[2]Medium");
-        System.out.print("\t\t[4]Extra Large");
-        System.out.print("\n[5]Back/Return");
-        
-        System.out.print("\n\nEnter Size: ");
-        item = input.nextInt();
-        
-        switch(item){
-        
-            case 1: 
-                System.out.println("Item                  Small Women's Blouse w Slacks");
-                call = 1;
-                price = 1600;
-                break;
-            case 2:
-                System.out.println("Item                  Medium Women's Blouse w Slacks");
-                call = 1;
-                price = 1630;
-                break;
-            case 3: 
-                System.out.println("Item                  Large Women's Blouse w Slacks");
-                call = 1;
-                price = 1670;
-                break;
-            case 4:
-                System.out.println("Item                  Extra Large Women's Blouse w Slacks");
-                call = 1;
-                price = 1690;
-                break;
-           
-            case 5:
-                hed.scmcs();
-                break;
-                
-            default:
-                sizescmcsblouse();
-                break;
-        }
-        System.out.println("Price                 "+price);
-        System.out.println("--------------------------------");
-        total = total + price;
-        quantity = quantity + call;
-        System.out.println("Total amount: "+total);
-        
-        Scanner sc = new Scanner(System.in);
-        System.out.println("Add another? (y/n) : ");
-        String ge = sc.nextLine();
-        if(ge.equals("y")||ge.equals("Y")){
-            hed.total4 = total;
-            hed.quantity4 = quantity;
-            hed.scmcs();
-        }
-        else{
-            hed.scmcspay();
-        }
-        
+
+      public ShoppingList sizescmcspolo(ShoppingList cart) {
+    // For Men's Polo w Slacks
+    Scanner input = new Scanner(System.in);
+    HigherEd hed = new HigherEd();
+    Select st = new Select();
+
+    // Display menu options
+    System.out.println("\n[1] Small");
+    System.out.println("[2] Medium");
+    System.out.println("[3] Large");
+    System.out.println("[4] Extra Large");
+    System.out.println("[5] Back/Return");
+
+    // Get user input for size
+    System.out.print("\n\nEnter Size: ");
+    int item = input.nextInt();
+
+    switch (item) {
+        case 1:
+            // Check if item exists and add or update quantity
+            if (cart.isExisting("Small Men's Polo w Slacks")) {
+                cart.updateQuantity("Small Men's Polo w Slacks", 1);
+            } else {
+                cart.addProduct("Small Men's Polo w Slacks", 1, 1500);
+            }
+            return cart;
+
+        case 2:
+            if (cart.isExisting("Medium Men's Polo w Slacks")) {
+                cart.updateQuantity("Medium Men's Polo w Slacks", 1);
+            } else {
+                cart.addProduct("Medium Men's Polo w Slacks", 1, 1500);
+            }
+            return cart;
+
+        case 3:
+            if (cart.isExisting("Large Men's Polo w Slacks")) {
+                cart.updateQuantity("Large Men's Polo w Slacks", 1);
+            } else {
+                cart.addProduct("Large Men's Polo w Slacks", 1, 1560);
+            }
+            return cart;
+
+        case 4:
+            if (cart.isExisting("Extra Large Men's Polo w Slacks")) {
+                cart.updateQuantity("Extra Large Men's Polo w Slacks", 1);
+            } else {
+                cart.addProduct("Extra Large Men's Polo w Slacks", 1, 1600);
+            }
+            return cart;
+
+        case 5:
+            hed.scmcs(cart); // Handle back/return case
+            break;
+
+        default:
+            sizescmcspolo(cart); // Handle invalid input
+            break;
     }
-      public void sizescmcspolo(){
+
+    return cart; // Return the updated cart
+}
+
+      public ShoppingList sizeshitmbluish(ShoppingList cart){
         Scanner input = new Scanner(System.in);
         HigherEd hed = new HigherEd();
         Select st = new Select();
@@ -1541,58 +1295,53 @@ public class Sizes
         System.out.print("\n\nEnter Size: ");
         item = input.nextInt();
         
-        switch(item){
-        
-            case 1: 
-                System.out.println("Item                  Small Men's Polo w Slacks");
-                call = 1;
-                price = 1500;
-                break;
-              
-            case 2:
-                System.out.println("Item                  Medium Men's Polo w Slacks");
-                call = 1;
-                price = 1500;
-                break;
-            case 3: 
-                System.out.println("Item                  Large Men's Polo w Slacks");
-                call = 1;
-                price = 1560;
-                break;
-            case 4:
-                System.out.println("Item                  Extra Large Men's Polo w Slacks");
-                call = 1;
-                price = 1600;
-                break;
-           
-            case 5:
-                hed.scmcs();
-                break;
-                
-            default:
-                sizescmcspolo();
-                break;
+        switch (item) {
+    case 1:
+        if (cart.isExisting("Small Women's Corporate Bluish Top and Skirt")) {
+            cart.updateQuantity("Small Women's Corporate Bluish Top and Skirt", 1);
+        } else {
+            cart.addProduct("Small Women's Corporate Bluish Top and Skirt", 1, 2200); // Add optional description here
         }
-        System.out.println("Price                 "+price);
-        System.out.println("--------------------------------");
-        total = total + price;
-        quantity = quantity + call;
-        System.out.println("Total amount: "+total);
-        
-        Scanner sc = new Scanner(System.in);
-        System.out.println("Add another? (y/n) : ");
-        String gesi = sc.nextLine();
-        if(gesi.equals("y")||gesi.equals("Y")){
-            hed.total4 = total;
-            hed.quantity4 = quantity;
-            hed.scmcs();
+        return cart;
+
+    case 2:
+        if (cart.isExisting("Medium Women's Corporate Bluish Top and Skirt")) {
+            cart.updateQuantity("Medium Women's Corporate Bluish Top and Skirt", 1);
+        } else {
+            cart.addProduct("Medium Women's Corporate Bluish Top and Skirt", 1, 2500); // Add optional description here
         }
-        else{
-            hed.scmcspay();
+        return cart;
+
+    case 3:
+        if (cart.isExisting("Large Women's Corporate Bluish Top and Skirt")) {
+            cart.updateQuantity("Large Women's Corporate Bluish Top and Skirt", 1);
+        } else {
+            cart.addProduct("Large Women's Corporate Bluish Top and Skirt", 1, 2650); // Add optional description here
         }
+        return cart;
+
+    case 4:
+        if (cart.isExisting("Extra Large Women's Corporate Bluish Top and Skirt")) {
+            cart.updateQuantity("Extra Large Women's Corporate Bluish Top and Skirt", 1);
+        } else {
+            cart.addProduct("Extra Large Women's Corporate Bluish Top and Skirt", 1, 2950); // Add optional description here
+        }
+        return cart;
+   
+
+    case 5:
+        hed.higher(cart); // Handle higher functionality for checkout or menu
+        break;
+
+    default:
+        sizeshitmbluish(cart); // Handle invalid input or redirect
+        break;
+}
+
         
+     return cart;  
     }
-      public void sizeshitmbluish(){
+      public ShoppingList sizeshitmmenbluish(ShoppingList cart){
         Scanner input = new Scanner(System.in);
         HigherEd hed = new HigherEd();
         Select st = new Select();
@@ -1606,120 +1355,51 @@ public class Sizes
         System.out.print("\n\nEnter Size: ");
         item = input.nextInt();
         
-        switch(item){                       
-        
-            case 1: 
-                System.out.println("Item                  Small Women's Corporate Bluish Top and Bluish Skirt");
-                call = 1;
-                price = 2200;
-                
-                break;
-              
-            case 2:
-                System.out.println("Item                  Medium Women's Corporate Bluish Top and Bluish Skirt");
-                call = 1;
-                price = 2500;
-                break;
-            case 3: 
-                System.out.println("Item                  Large Women's Corporate Bluish Top and Bluish Skirt");
-                call = 1;
-                price = 2650;
-                break;
-            case 4:
-                System.out.println("Item                  Extra Large Women's Corporate Bluish Top and Bluish Skirt");
-                call = 1;
-                price = 2950;
-                break;
-           
-            case 5:
-                hed.higher();
-                break;
-                
-            default:
-                sizeshitmbluish();
-                break;
+        switch (item) {
+    case 1:
+        if (cart.isExisting("Small Men's Corporate Bluish Top and Bluish Pants")) {
+            cart.updateQuantity("Small Men's Corporate Bluish Top and Bluish Pants", 1);
+        } else {
+            cart.addProduct("Small Men's Corporate Bluish Top and Bluish Pants", 1, 2200); // Optional description
         }
-        System.out.println("Price                 "+price);
-        System.out.println("--------------------------------");
-        quantity = quantity + call;
-        total = total + price;
-        System.out.println("Total amount: "+total);
-        
-        Scanner sc = new Scanner(System.in);
-        System.out.println("Add another? (y/n) : ");
-        String ge = sc.nextLine();
-        if(ge.equals("y")||ge.equals("Y")){
-            hed.quantity5 = quantity;
-            hed.total5 = total;
-            hed.sihtm();
+        return cart;
+
+    case 2:
+        if (cart.isExisting("Medium Men's Corporate Bluish Top and Bluish Pants")) {
+            cart.updateQuantity("Medium Men's Corporate Bluish Top and Bluish Pants", 1);
+        } else {
+            cart.addProduct("Medium Men's Corporate Bluish Top and Bluish Pants", 1, 2500); // Optional description
         }
-        else{
-            hed.sihtmpay();
+        return cart;
+
+    case 3:
+        if (cart.isExisting("Large Men's Corporate Bluish Top and Bluish Pants")) {
+            cart.updateQuantity("Large Men's Corporate Bluish Top and Bluish Pants", 1);
+        } else {
+            cart.addProduct("Large Men's Corporate Bluish Top and Bluish Pants", 1, 2650); // Optional description
         }
-        
-    }
-      public void sizeshitmmenbluish(){
-        Scanner input = new Scanner(System.in);
-        HigherEd hed = new HigherEd();
-        Select st = new Select();
-        
-        System.out.print("\n[1]Small");
-        System.out.print("\t\t[3]Large");
-        System.out.print("\n[2]Medium");
-        System.out.print("\t\t[4]Extra Large");
-        System.out.print("\n[5]Back/Return");
-        
-        System.out.print("\n\nEnter Size: ");
-        item = input.nextInt();
-        
-        switch(item){
-        
-            case 1: 
-                System.out.println("Item                  Small Men's Corporate Bluish Top and Bluish Pants");
-                call = 1;
-                price = 2200;
-                break;
-            case 2:
-                System.out.println("Item                  Medium Men's Corporate Bluish Top and Bluish Pants");
-                call = 1;
-                price = 2500;
-                break;
-            case 3: 
-                System.out.println("Item                  Large Men's Corporate Bluish Top and Bluish Pants");
-                call = 1;
-                price = 2650;
-                break;
-            case 4:
-                System.out.println("Item                  Extra Large Men's Corporate Bluish Top and Bluish Pants");
-                call = 1;
-                price = 2950;
-                break;
-           
-            case 5:
-                hed.higher();
-                break;
-                
-            default:
-                sizeshitmmenbluish();
-                break;
+        return cart;
+
+    case 4:
+        if (cart.isExisting("Extra Large Men's Corporate Bluish Top and Bluish Pants")) {
+            cart.updateQuantity("Extra Large Men's Corporate Bluish Top and Bluish Pants", 1);
+        } else {
+            cart.addProduct("Extra Large Men's Corporate Bluish Top and Bluish Pants", 1, 2950); // Optional description
         }
-        System.out.println("Price                 "+price);
-        System.out.println("--------------------------------");
-        total = total + price;
-        quantity = quantity + call;
-        System.out.println("Total amount: "+total);
-        
-        Scanner sc = new Scanner(System.in);
-        System.out.println("Add another? (y/n) : ");
-        String gelang = sc.nextLine();
-        if(gelang.equals("y")||gelang.equals("Y")){
-            hed.total5 = total;
-            hed.quantity5 = quantity;
-            hed.sihtm();
-        }
-        else{
-            hed.sihtmpay();
-        }
+        return cart;
+
+    // Add remaining cases for sizes (5-8) following the same format
+
+    case 5:
+        hed.higher(cart);
+        break;
+
+    default:
+        sizeshitmmenbluish(cart);
+        break;
+}
+
+        return cart;
     }
     
 }

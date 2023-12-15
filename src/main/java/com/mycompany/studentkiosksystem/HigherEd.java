@@ -1,32 +1,27 @@
-
 package com.mycompany.studentkiosksystem;
+import java.util.List;
+import java.util.Map;
 import java.util.Random;
 import java.util.Scanner;
 public class HigherEd 
 {
-    public int item;
-    int price;
-    int call, quantity3, total3, total4, total5, total6;
-    int quantity4, quantity5, quantity6;
-    String gegeg, gesige, lezgo;
+    public int item;    
+    String  gesige;
+    ShoppingList cart = new ShoppingList();
     
     public HigherEd()
     {
-        item = 0;
-        total3 = 0;
-        gegeg = "";
-        quantity3 = 0;
-        quantity4 = 0;
-        quantity5 = 0;
-        quantity6 = 0;
-        call = 0;
-        total4 = 0;
-        total5 = 0;
+        item = 0;        
         gesige = "";
-        lezgo = "";
+        
     }
     
-    public void higher()
+    public HigherEd(ShoppingList cart)
+    {
+        this.cart = cart;
+    }
+    
+    public void higher(ShoppingList cart)
     {
          Select st = new Select();
          Scanner input = new Scanner(System.in);
@@ -41,25 +36,26 @@ public class HigherEd
          switch(item)
          {
              case 1:
-                 scmcs();
+                 scmcs(cart);
                  break;
              case 2:
-                 snashs();
+                 snashs(cart);
                  break;
              case 3:
-                 sihtm();
+                 sihtm(cart);
                  break;
              case 4:
                  st.select();
                  break;
              default:
-                 higher();
+                 System.out.println("\n\t\t\tIncorrect input! Please, try again.");
+                 higher(cart);
                  break;             
          }
          
     }
     
-    public void snashs()
+    public void snashs(ShoppingList cart)
     {
         Scanner input = new Scanner(System.in);
         Sizes size = new Sizes();
@@ -80,100 +76,68 @@ public class HigherEd
         switch(item)
         {        
         case 1: 
-            System.out.println("Item                  Scrub Top w Pants");          
-            call = 1;
-            size.sizesnashsscrub();
-            break;
+            cart = size.sizesnashsscrub(cart);
+            break;            
         case 2: 
-            System.out.println("Item                  Green Nursing Uniform Coat");    
-            call = 1;
-            size.sizesnashsgreen();
+            /*System.out.println("Item                  Green Nursing Uniform Coat");    
+            call = 1;*/
+            cart = size.sizesnashsgreen(cart);
             break;           
-        case 3: 
-            System.out.println("Item                  Laboratory White Coat");
-            call = 1;
-            size.sizesnashslab();
+        case 3:             
+            cart = size.sizesnashslab(cart);
             break;
         case 4: 
-            System.out.println("Item                  Nurse's Cap");
-            call = 1;
-            price = 250;
+            if (cart.isExisting("Nurse's Cap")) 
+            {
+                cart.updateQuantity("Nurse's Cap", 1);
+            } 
+            else 
+            {
+                cart.addProduct("Nurse's Cap", 1, 250);
+            }           
             break;       
         case 5: 
-            System.out.println("Item                  SDCA Red Shirt");
-            call = 1;
-            size.sizesnashsdcared();            
+            /*System.out.println("Item                  SDCA Red Shirt");
+            call = 1;*/
+            cart = size.sizescmcssdcared(cart);            
             break;
         case 6:
-            System.out.println("Item                  PE Uniform");
-            call = 1;
-            size.sizepesnashs();
+            /*System.out.println("Item                  PE Uniform");
+            call = 1;*/
+            cart= size.sizepescmcs(cart);
             break;
         case 7: 
-            higher();
+            higher(cart);
             break;
         default: 
-            snashs();
+            snashs(cart);
             break;
         }
         
-        System.out.println("Price                 "+price);
-        System.out.println("--------------------------------");
-        total3 = total3 + price;
-        quantity3 = quantity3 + call;
-        System.out.println("Total amount: "+total3);
+        List<Map<String, Object>> current_cart = cart.getAllProducts();
+        System.out.println("\t\t--------------------------------------------------------------");
+        for (int i = 0; i < current_cart.size(); i++)
+        {
+            Map<String, Object> product = current_cart.get(i);
+            System.out.print("Name: " + product.get("pname") + "\t");
+            System.out.print("Quantity: " + product.get("pqty") + "\t");
+            System.out.println("Price: "+product.get("pprice"));
+        }
+        System.out.println("\t\t--------------------------------------------------------------");                
+        System.out.println("\nTotal amount: "+ cart.getTotalPrice());
         
         Scanner sc = new Scanner(System.in);
         System.out.println("Add another? (y/n) : ");
-        gegeg = sc.nextLine();
+        gesige = sc.nextLine();
         }
-        while(gegeg.equals("y")||gegeg.equals("Y"));
-        snashpay();
+        while(gesige.equals("y")||gesige.equals("Y"));
+           BasicEduc bed = new BasicEduc(cart);
+           bed.pay(cart);
     }
     
-    public void snashpay()
-    {
-        Scanner input = new Scanner(System.in);
-        Select st = new Select();
-        System.out.println("\nCongratulations!");
-        System.out.println("\nYour Transaction is Pre-Ordered.");
-        System.out.println("Please Proceed to Cashier at Lobby Ground Floor");
-        Random random = new Random();
-        int num1;
-        
-       for(int i = 0; i<1; i++)
-       {
-           num1 = random.nextInt(999999);
-           System.out.println("and Continue by Paying with given code: "+num1);
-       }
-       
-       Sizes size = new Sizes();
-       quantity3 = quantity3 + size.quantity;
-       System.out.println("\nQuantity \t\t\tPrice");
-       System.out.print("\n"+quantity3);
-       System.out.print("\t\t\t\t"+total3);
+    
 
-       System.out.println("");
-
-       System.out.println("\n[1]Buy Another");
-       System.out.println("[2]Exit ");
-
-       System.out.print("\nEnter here: ");
-       int items = input.nextInt();
-
-        switch(items)
-        {
-            case 1:
-                total3 = 0;
-                st.select();
-            case 2:
-                //logout
-            default: 
-                System.exit(0);
-        }
-    }
-
-    public void scmcs()
+    public void scmcs(ShoppingList cart)
     {
         Scanner input = new Scanner(System.in);
         Sizes size = new Sizes();
@@ -195,99 +159,78 @@ public class HigherEd
         {
         case 1: 
             System.out.println("Item                  Women's Blouse w Slacks");
-            size.sizescmcsblouse();
+            cart = size.sizescmcsblouse(cart);
             break;
         case 2: 
-            System.out.println("Item                  Women's Scarf");
-            call = 1;
-            price = 250;
+            if (cart.isExisting("Women's Scarf")) 
+            {
+            cart.updateQuantity("Women's Scarf", 1);
+            } else {
+    cart.addProduct("Women's Scarf", 1, 250); // Include optional description
+}
+
             break;
         case 3: 
-            System.out.println("Item                  Women's Belt");
-            call = 1;
-            price = 200;      
+            if (cart.isExisting("Belt")) {
+    cart.updateQuantity("Belt", 1); // Consider using a gender-neutral term like "Belt" instead of "Women's Belt"
+} else {
+    cart.addProduct("Belt", 1, 200); // Include optional description and size information
+}
+      
             break;
         case 4: 
+            
             System.out.println("Item                  Men's Polo w Slacks");
-            size.sizescmcspolo();
+            cart = size.sizescmcspolo(cart);
             break;        
         case 5: 
-            System.out.println("Item                  Men's Necktie");
-            call = 1;
-            price = 280;
+            if (cart.isExisting("Men's Necktie")) {
+    cart.updateQuantity("Men's Necktie", 1);
+} else {
+    cart.addProduct("Necktie", 1, 280); // Consider using a gender-neutral term like "Necktie" and include optional description and information about variety
+}
+
             break;
         case 6:
             System.out.println("Item                  SDCA Red Shirt");
-            size.sizescmcssdcared();            
+            cart = size.sizescmcssdcared(cart);            
             break;
         case 7: 
             System.out.println("Item                  PE Uniform");
-            size.sizepescmcs();
+            cart = size.sizepescmcs(cart);
             break;
         case 8: 
-            higher();
+            higher(cart);
             break;
         default: 
-            scmcs();
+            scmcs(cart);
             break;
         }
         
-        System.out.println("Price                 "+price);
-        System.out.println("--------------------------------");
-        total4 = total4 + price;
-        quantity4 = quantity4 + call;
-        System.out.println("Total amount: "+total4);
+        List<Map<String, Object>> current_cart = cart.getAllProducts();
+        System.out.println("\t\t--------------------------------------------------------------");
+        for (int i = 0; i < current_cart.size(); i++)
+        {
+            Map<String, Object> product = current_cart.get(i);
+            System.out.print("Name: " + product.get("pname") + "\t");
+            System.out.print("Quantity: " + product.get("pqty") + "\t");
+            System.out.println("Price: "+product.get("pprice"));
+        }
+        System.out.println("\t\t--------------------------------------------------------------");                
+        System.out.println("\nTotal amount: "+ cart.getTotalPrice());
         
         Scanner sc = new Scanner(System.in);
         System.out.println("Add another? (y/n) : ");
         gesige = sc.nextLine();
         }
         while(gesige.equals("y")||gesige.equals("Y"));
-           scmcspay();
+           BasicEduc bed = new BasicEduc(cart);
+           bed.pay(cart);
     }
     
-    public void scmcspay()
-    {        
-        Scanner input = new Scanner(System.in);
-        Select st = new Select();
-        System.out.println("\nCongratulations!");
-        System.out.println("\nYour Transaction is Pre-Ordered.");
-        System.out.println("Please Proceed to Cashier at Lobby Ground Floor");
-        Random random = new Random();
-        int num1;        
-        
-        for(int i = 0; i<1; i++)
-        {
-           num1 = random.nextInt(999999);
-           System.out.println("and Continue by Paying with given code: "+num1);
-        }
-        
-        Sizes size = new Sizes();
-        quantity4 = quantity4 + size.quantity;
-        System.out.println("\nQuantity \t\t\tPrice");
-        System.out.print("\n"+quantity4);
-        System.out.print("\t\t\t\t"+total4);
-        System.out.println("");
-
-        System.out.println("\n[1]Buy Another");
-        System.out.println("[2]Exit ");
-
-        System.out.print("\nEnter here: ");
-        int items = input.nextInt();
-
-        switch(items)
-        {
-            case 1:
-                total4 = 0;
-                st.select();
-            case 2:
-                //logout
-            default: 
-                System.exit(0);
-        }
-    }
     
-    public void sihtm()
+    
+    public void sihtm(ShoppingList cart) 
     {
         Scanner input = new Scanner(System.in);
         Sizes size = new Sizes();
@@ -305,91 +248,81 @@ public class HigherEd
         System.out.print("\n\nEnter here: ");
         item  = input.nextInt();
         
-        switch(item)
-        {
-            case 1: 
-                System.out.println("Women's Corporate Bluish Top and Skirt");
-                size.sizeshitmbluish();
-                break;
-            case 2:
-                System.out.println("Women's Blazer");
-            call = 1;
-                price = 350;
-                break;
-            case 3:
-                System.out.println("Men's Corporate Bluish Top and Pants");
-                size.sizeshitmmenbluish();
-                break;
-            case 4: 
-                System.out.println("Men's Vest");
-                call = 1;
-                price = 300;
-                break;
-            case 5: 
-                System.out.println("PE Uniform");
-                size.sizepesihtm();
-                break;
-            case 6:
-                size.sizesihtmsdcared();
-                break;
-            case 7:
-                higher();
-            default: 
-                sihtm();
-                break;
+        switch (item) {
+    case 1:
+        // Instead of directly calling size function, offer options for size selection.
+        //System.out.println("Choose your size for the Corporate Bluish Top and Skirt:");
+        cart = size.sizeshitmbluish(cart); // Provide size options
+        break;
+
+    case 2:
+        // Eliminate gendered terms and focus on product features.
+        System.out.println("Complete your look with a stylish Blazer!");
+        if (cart.isExisting("Blazer")) {
+            cart.updateQuantity("Blazer", 1);
+        } else {
+            cart.addProduct("Blazer", 1, 350); 
         }
+        break;
+
+    case 3:
+        // Instead of assuming gender, offer generic terms.
+        System.out.println("Choose your size for the Corporate Bluish Top and Pants:");
+        cart = size.sizeshitmmenbluish(cart); // Provide size options
+        break;
+
+    case 4:
+        // Eliminate gendered terms and focus on product features.
+        System.out.println("Add a touch of style with a Vest!");
+        if (cart.isExisting("Vest")) {
+            cart.updateQuantity("Vest", 1);
+        } else {
+            cart.addProduct("Vest", 1, 300); 
+        }
+        break;
+
+    case 5:
+        // Maintain current functionality for PE uniform size selection.
+        System.out.println("Choose your size for the PE Uniform:");
+        cart = size.sizepescmcs(cart);
+        break;
+
+    case 6:
+        // Maintain current functionality for SDCA Red Shirt size selection.
+        cart = size.sizescmcssdcared(cart);
+        break;
+
+    case 7:
+        // Maintain current functionality for higher menu options.
+        higher(cart);
+        break;
+
+    default:
+        // Maintain current functionality for invalid input handling.
+        sihtm(cart);
+        break;
+}
+
+        List<Map<String, Object>> current_cart = cart.getAllProducts();
+        System.out.println("\t\t--------------------------------------------------------------");
+        for (int i = 0; i < current_cart.size(); i++)
+        {
+            Map<String, Object> product = current_cart.get(i);
+            System.out.print("Name: " + product.get("pname") + "\t");
+            System.out.print("Quantity: " + product.get("pqty") + "\t");
+            System.out.println("Price: "+product.get("pprice"));
+        }
+        System.out.println("\t\t--------------------------------------------------------------");                
+        System.out.println("\nTotal amount: "+ cart.getTotalPrice());
         
-        System.out.println("Price                 "+price);
-        System.out.println("--------------------------------");
-        total5 = total5 + price;
-        quantity5 = quantity5 + call;
-        System.out.println("Total amount: "+total5);
         Scanner sc = new Scanner(System.in);
         System.out.println("Add another? (y/n) : ");
-        lezgo = sc.nextLine();
+        gesige = sc.nextLine();
         }
-        while(lezgo.equals("y")||lezgo.equals("Y"));
-        sihtmpay();
+        while(gesige.equals("y")||gesige.equals("Y"));
+           BasicEduc bed = new BasicEduc(cart);
+           bed.pay(cart);
     }
     
-      public void sihtmpay()
-      {        
-        Scanner input = new Scanner(System.in);
-        Select st = new Select();
-        System.out.println("\nCongratulations!");
-        System.out.println("\nYour Transaction is Pre-Ordered.");
-        System.out.println("Please Proceed to Cashier at Lobby Ground Floor");
-        Random random = new Random();
-        int num1;
-        
-        for(int i = 0; i<1; i++)
-        {
-           num1 = random.nextInt(999999);
-           System.out.println("and Continue by Paying with given code: "+num1);
-        }
-        
-        Sizes size = new Sizes();
-        quantity5 = quantity5 + size.quantity;
-        System.out.println("\nQuantity \t\t\tPrice");
-        System.out.print("\n"+quantity5);
-        System.out.print("\t\t\t\t"+total5);
-        System.out.println("");
-
-        System.out.println("\n[1]Buy Another");
-        System.out.println("[2]Exit ");
-
-        System.out.print("\nEnter here: ");
-        int items = input.nextInt();
-
-        switch(items)
-        {
-            case 1:
-                total5 = 0;
-                st.select();
-            case 2:              
-                default: 
-            System.exit(0);
-        }
-
-     }    
+         
 }

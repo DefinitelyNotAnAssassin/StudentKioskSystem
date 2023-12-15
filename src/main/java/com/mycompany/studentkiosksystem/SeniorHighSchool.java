@@ -129,9 +129,11 @@ public class SeniorHighSchool
         gege = sc.nextLine();
         }
         while(gege.equals("y")||gege.equals("Y"));
-        pay(cart);
+        BasicEduc bed = new BasicEduc();
+            bed.pay(cart);
         }
-        
+    
+        /*
     public void pay(ShoppingList cart)
     {        
         Scanner input = new Scanner(System.in);
@@ -181,5 +183,5 @@ public class SeniorHighSchool
                 break;
         }
 
-    }
+    }*/
 }

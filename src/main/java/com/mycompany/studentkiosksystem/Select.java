@@ -35,7 +35,7 @@ public class Select
             sh.senior(new ShoppingList());
             break;
         case 3: 
-            hed.higher();
+            hed.higher(new ShoppingList());
             break;
         case 4:
             System.exit(0);
